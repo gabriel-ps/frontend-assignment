@@ -21,13 +21,14 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '@': path.resolve(__dirname, 'src'),
       Router: path.resolve(__dirname, 'src', 'router'),
       Store: path.resolve(__dirname, 'src', 'store'),
       Pages: path.resolve(__dirname, 'src', 'pages'),
       Components: path.resolve(__dirname, 'src', 'components'),
       Directives: path.resolve(__dirname, 'src', 'directives'),
       Filters: path.resolve(__dirname, 'src', 'filters'),
-      Images: path.resolve(__dirname, 'src', 'images'),
+      Images: path.resolve(__dirname, 'src', 'assets', 'images'),
       Styles: path.resolve(__dirname, 'src', 'styles'),
       Plugins: path.resolve(__dirname, 'src', 'plugins'),
       Mixins: path.resolve(__dirname, 'src', 'mixins')
@@ -110,8 +111,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: 'src/images',
-        to: 'assets/images'
+        from: 'src/assets',
+        to: 'assets'
       },
     ]),
   ]
