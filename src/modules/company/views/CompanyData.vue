@@ -1,7 +1,15 @@
 <template>
-  <h1>Company data</h1>
+  <AppContainer>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi suscipit error dolores doloremque! Error sunt fuga aut similique id illo. Animi expedita atque sunt fugiat in? Quidem dolore molestias cum!</p>
+  </AppContainer>
 </template>
 
 <script>
-export default {};
+import AppContainer from '@/modules/core/components/layout/AppContainer.vue';
+
+export default {
+  components: {
+    AppContainer
+  }
+};
 </script>

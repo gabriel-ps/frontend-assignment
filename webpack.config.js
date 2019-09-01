@@ -29,7 +29,7 @@ module.exports = {
       Directives: path.resolve(__dirname, 'src', 'directives'),
       Filters: path.resolve(__dirname, 'src', 'filters'),
       Images: path.resolve(__dirname, 'src', 'assets', 'images'),
-      Styles: path.resolve(__dirname, 'src', 'styles'),
+      Styles: path.resolve(__dirname, 'src', 'assets', 'styles'),
       Plugins: path.resolve(__dirname, 'src', 'plugins'),
       Mixins: path.resolve(__dirname, 'src', 'mixins')
     }

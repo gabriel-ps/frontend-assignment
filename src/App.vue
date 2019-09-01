@@ -1,30 +1,31 @@
 <template>
-  <div>
-    <app-header />
-    <breadcrumb />
-    <app-sidebar />
+  <div id="app">
+    <TheHeader />
+    <AppBreadcrumb />
+    <TheSidebar />
 
     <router-view />
 
-    <app-footer />
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import Header from '@/modules/core/components/layout/Header.vue';
-import Sidebar from '@/modules/core/components/layout/Sidebar.vue';
-import Footer from '@/modules/core/components/layout/Footer.vue';
-import Breadcrumb from '@/modules/core/components/layout/Breadcrumb.vue';
+import TheHeader from '@/modules/core/components/layout/TheHeader.vue';
+import TheSidebar from '@/modules/core/components/layout/TheSidebar.vue';
+import TheFooter from '@/modules/core/components/layout/TheFooter.vue';
+import AppBreadcrumb from '@/modules/core/components/layout/AppBreadcrumb.vue';
 
 export default {
   components: {
-    'app-header': Header,
-    'app-sidebar': Sidebar,
-    'app-footer': Footer,
-    Breadcrumb,
+    TheHeader,
+    TheSidebar,
+    TheFooter,
+    AppBreadcrumb,
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import 'Styles/main.scss';
 </style>
