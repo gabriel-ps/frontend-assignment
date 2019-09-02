@@ -15,13 +15,7 @@
 </template>
 
 <script>
-import AppLink from '@/modules/core/components/AppLink.vue';
-
-export default {
-  components: {
-    AppLink,
-  }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

@@ -7,13 +7,7 @@
 </template>
 
 <script>
-import AppContainer from '@/modules/core/components/layout/AppContainer.vue';
-
-export default {
-  components: {
-    AppContainer,
-  }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

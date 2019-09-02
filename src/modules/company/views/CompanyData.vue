@@ -5,12 +5,8 @@
 </template>
 
 <script>
-// import AppContainer from '@/modules/core/components/layout/AppContainer.vue';
-
 export default {
-  components: {
-    // AppContainer
-  }
+  components: {}
 };
 </script>
 

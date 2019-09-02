@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TheHeader />
-    <AppBreadcrumb />
+    <TheBreadcrumb />
     <AppContainer class="main-container">
       <TheSidebar />
       <main>
@@ -17,16 +17,14 @@
 import TheHeader from '@/modules/core/components/layout/TheHeader.vue';
 import TheSidebar from '@/modules/core/components/layout/TheSidebar.vue';
 import TheFooter from '@/modules/core/components/layout/TheFooter.vue';
-import AppContainer from '@/modules/core/components/layout/AppContainer.vue';
-import AppBreadcrumb from '@/modules/core/components/layout/AppBreadcrumb.vue';
+import TheBreadcrumb from '@/modules/core/components/layout/TheBreadcrumb.vue';
 
 export default {
   components: {
     TheHeader,
     TheSidebar,
     TheFooter,
-    AppContainer,
-    AppBreadcrumb,
+    TheBreadcrumb,
   }
 };
 </script>
