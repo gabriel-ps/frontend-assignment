@@ -1,5 +1,7 @@
 <template>
-  <h1>Page not Found</h1>
+  <AppContainer>
+    <h1>404 - Page not Found</h1>
+  </AppContainer>
 </template>
 
 <script>

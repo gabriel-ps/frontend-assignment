@@ -1,11 +1,9 @@
 <template>
-  <div class="input-wrapper">
+  <div class="input-wrapper" :class="{ 'has-error': hasError }">
     <label
       v-if="label"
       class="label"
-    >
-      {{ label }}
-    </label>
+    >{{ label }}</label>
     <input
       :type="type"
       class="input"
@@ -13,6 +11,10 @@
       @input="$emit('update', $event.target.value)"
       v-on="$listeners"
     />
+    <p
+      v-if="hasError && errorMessage"
+      class="error-message"
+    >{{ errorMessage }}</p>
   </div>
 </template>
 
@@ -42,6 +44,14 @@ export default {
       type: String,
       default: '',
     },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
@@ -61,6 +71,16 @@ export default {
     line-height: 1;
     border: $size-input-border solid $color-input-border;
     border-radius: $size-input-border-radius;
+  }
+}
+
+.input-wrapper.has-error {
+  .label, .error-message {
+    color: red;
+  }
+  .input {
+    border: $size-input-border solid red;
+    outline: none;
   }
 }
 </style>
