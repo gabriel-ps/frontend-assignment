@@ -19,10 +19,11 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import 'Styles/design/index.scss';
+
 .sidebar {
   // border: 1px solid #e6e9ef;
   padding: 0;
-  // position: relative;
 
   ul {
     padding: 0;
@@ -36,6 +37,7 @@ export default {};
       white-space: nowrap;
       // margin: 13px 0;
       border: 1px solid #e6e9ef;
+      border-radius: $size-input-border-radius;
 
 
       a {
