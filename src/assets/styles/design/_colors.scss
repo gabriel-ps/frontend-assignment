@@ -1,16 +1,17 @@
 // CONTENT
-$color-body-bg: #f9f7f5;
-$color-text: #444;
-$color-heading-bg: lightgray;
-$color-heading-text: #35495e;
+$color-body-bg: #fff;
+$color-text: #767676;
+$color-header-bg: #394783;
+$color-header-text: #c4c7d9;
 
+$color-footer-bg: #f3f3f3;
 
 // LINKS
-$color-link-text: #39a275;
+$color-link-text: #707aa5;
 $color-link-text-active: $color-text;
 
 // INPUTS
-$color-input-border: lighten($color-heading-text, 50%);
+$color-input-border: lighten($color-header-text, 50%);
 
 // BUTTONS
 $color-button-bg: $color-link-text;

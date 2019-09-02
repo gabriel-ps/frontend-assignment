@@ -1,19 +1,59 @@
 <template>
-  <nav>
+  <nav class="sidebar">
     <ul>
       <li>
-        <router-link :to="{ name: 'company-data' }">Company data</router-link>
+        <AppLink :to="{ name: 'company-data' }">Company data</AppLink>
       </li>
       <li>
-        <router-link :to="{ name: 'company-table' }">Company table</router-link>
+        <AppLink :to="{ name: 'company-table' }">Company table</AppLink>
       </li>
       <li>
-        <router-link :to="{ name: 'company-page' }">Company page</router-link>
+        <AppLink :to="{ name: 'company-page' }">Company page</AppLink>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {};
+import AppLink from '@/modules/core/components/AppLink.vue';
+
+export default {
+  components: {
+    AppLink,
+  }
+};
 </script>
+
+<style lang="scss" scoped>
+.sidebar {
+  // border: 1px solid #e6e9ef;
+  padding: 0;
+  // position: relative;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    height: 100%;
+
+
+    li {
+      list-style-type: none;
+      white-space: nowrap;
+      // margin: 13px 0;
+      border: 1px solid #e6e9ef;
+
+
+      a {
+        display: block;
+        padding: 16px;
+        // router-link-exact-active
+        &.router-link-active {
+          background: #fafbfc;
+          border-left: 5px solid #344279;
+        }
+      }
+    }
+  }
+}
+</style>
