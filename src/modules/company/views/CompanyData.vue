@@ -16,14 +16,25 @@
         placeholder="e.g. $150,000"
         v-model="$v.company.spend.$model"
         :has-error="$v.company.spend.$dirty ? $v.company.spend.$error : false"
-        error-message="Please inform the company spend value. It must be a value greater than 0."
+        error-message="Please inform the company spend value. It must be greater than 0."
       />
 
-      <AppInput
-        label="Company spend ability"
-        placeholder="e.g. $150,000 - $330,000"
-        v-model="company.spend_ability"
-      />
+      <div class="spend-ability">
+        <AppMoneyInput
+          label="Company spend ability minimum value"
+          placeholder="e.g. $150,000"
+          v-model="$v.company.spendAbility.minimum.$model"
+          :has-error="$v.company.spendAbility.minimum.$dirty ? $v.company.spendAbility.minimum.$error : false"
+          error-message="Please inform the company spend ability minimum value. It must be greater than 0. It must be less than maximum value."
+        />
+        <AppMoneyInput
+          label="Company spend ability maximum value"
+          placeholder="e.g. $330,000"
+          v-model="$v.company.spendAbility.maximum.$model"
+          :has-error="$v.company.spendAbility.maximum.$dirty ? $v.company.spendAbility.maximum.$error : false"
+          error-message="Please inform the company spend ability maximum value. It must be greater than the minimum value."
+        />
+      </div>
 
       <AppTextarea
         label="Notes"
@@ -42,9 +53,10 @@
 import { mapActions, mapState } from 'vuex';
 import { required, decimal } from 'vuelidate/lib/validators';
 import Company from '../domain/company/Company';
-const positive = (value) => value > 0;
 
 const module = 'company';
+const positive = (value) => value > 0;
+const lessThanMaximum = (currMinimum, spendAbility) => currMinimum < spendAbility.maximum;
 
 export default {
   data() {
@@ -55,13 +67,17 @@ export default {
   validations: {
     company: {
       name: { required },
-      spend: { required, decimal, positive }
+      spend: { required, decimal, positive },
+      spendAbility: {
+        minimum: { required, decimal, positive, lessThanMaximum },
+        maximum: { required, decimal, positive },
+      },
     },
   },
   methods: {
     ...mapActions(module, ['addCompany']),
     submit() {
-      this.$v.touch();
+      this.$v.$touch();
 
       if (this.$v.$invalid) {
         // Errors, do not send
@@ -94,6 +110,16 @@ export default {
 
   .input-wrapper, .textarea-wrapper {
     margin-top: 3rem;
+  }
+
+  .spend-ability {
+    display: flex;
+    justify-content: space-between;
+
+    .input-wrapper {
+      width: 48%;
+    }
+
   }
 }
 </style>

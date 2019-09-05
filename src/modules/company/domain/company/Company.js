@@ -3,7 +3,10 @@ export default class Company {
   constructor(data = null) {
     this.name = '';
     this.spend = 0;
-    this.spend_ability = '';
+    this.spendAbility = {
+      minimum: 0,
+      maximum: 0,
+    };
     this.notes = '';
 
     if (data) {
