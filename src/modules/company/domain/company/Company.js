@@ -2,7 +2,7 @@
 export default class Company {
   constructor(data = null) {
     this.name = '';
-    this.spend = '';
+    this.spend = 0;
     this.spend_ability = '';
     this.notes = '';
 
