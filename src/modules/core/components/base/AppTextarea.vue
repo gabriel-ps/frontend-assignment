@@ -11,6 +11,7 @@
       v-bind="$attrs"
       @input="$emit('update', $event.target.value)"
       v-on="$listeners"
+      ref="textarea"
     ></textarea>
   </div>
 </template>

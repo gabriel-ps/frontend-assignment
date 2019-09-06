@@ -39,12 +39,31 @@
       <AppTextarea
         label="Notes"
         placeholder="e.g. Good Tech Company"
-        v-model="company.notes" />
+        v-model="company.notes"
+        @focus="showAdditionalNotesModal()"
+      />
 
+      <!-- To allow submit -->
       <button
         v-show="false"
         type="submit">
       </button>
+
+      <AppModal
+        title="Additional notes"
+        :show="showModal"
+        @close="showModal = false">
+          <template #body>
+            <AppTextarea
+              placeholder="e.g. Good Tech Company"
+              v-model="company.notes"
+              ref="additionalNotesInput"
+            />
+          </template>
+          <template #footer>
+            <button type="submit">Save</button>
+          </template>
+      </AppModal>
     </form>
   </div>
 </template>
@@ -62,6 +81,7 @@ export default {
   data() {
     return {
       company: new Company(),
+      showModal: false,
     };
   },
   validations: {
@@ -76,6 +96,13 @@ export default {
   },
   methods: {
     ...mapActions(module, ['addCompany']),
+    showAdditionalNotesModal() {
+      this.showModal = true;
+
+      this.$nextTick(() => {
+        this.$refs.additionalNotesInput.$refs.textarea.focus();
+      });
+    },
     submit() {
       this.$v.$touch();
 

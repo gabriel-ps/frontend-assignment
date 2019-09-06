@@ -1,5 +1,9 @@
 <template>
-  <a v-if="href" :href="href" target="_blank">
+  <a
+    v-if="href"
+    :href="href"
+    target="_blank"
+  >
     <slot />
   </a>
   <RouterLink v-else :to="to">
