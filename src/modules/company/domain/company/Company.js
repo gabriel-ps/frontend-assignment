@@ -12,6 +12,10 @@ export default class Company {
     if (data) {
       this.bind(data);
     }
+
+    if (!this.id) {
+      this.id = this.generateUniqueId();
+    }
   }
 
   bind(data) {
@@ -20,5 +24,10 @@ export default class Company {
         this[key] = data[key];
       }
     }
+  }
+
+  generateUniqueId() {
+    // Simulate an unique ID
+    return Object.values(this).join();
   }
 }

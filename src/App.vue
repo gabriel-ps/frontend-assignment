@@ -4,7 +4,7 @@
     <TheBreadcrumb />
     <AppContainer class="main-container">
       <TheSidebar />
-      <main>
+      <main class="main">
         <router-view />
       </main>
     </AppContainer>
@@ -41,6 +41,10 @@ export default {
 
   .main-container {
     display: flex;
+
+    .main {
+      width: 100%;
+    }
   }
 }
 </style>

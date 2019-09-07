@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions } from 'vuex';
 import { required, decimal } from 'vuelidate/lib/validators';
 import Company from '../domain/company/Company';
 
@@ -110,15 +110,12 @@ export default {
         // Errors, do not send
         return;
       }
+
+      this.addCompany(this.company);
+
+      this.$router.push({ name: 'company-page' });
     },
   },
-  computed: {
-    ...mapState(module, {
-      companies (state) {
-        return state.companies
-      },
-    }),
-  }
 };
 </script>
 
