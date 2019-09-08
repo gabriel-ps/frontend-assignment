@@ -8,7 +8,7 @@
         placeholder="e.g. Your Company Name"
         v-model="$v.company.name.$model"
         :has-error="$v.company.name.$dirty ? $v.company.name.$error : false"
-        error-message="Please inform the company name"
+        error-message="Please inform the company name."
       />
 
       <AppMoneyInput
@@ -25,7 +25,7 @@
           placeholder="e.g. $150,000"
           v-model="$v.company.spendAbility.minimum.$model"
           :has-error="$v.company.spendAbility.minimum.$dirty ? $v.company.spendAbility.minimum.$error : false"
-          error-message="Please inform the company spend ability minimum value. It must be greater than 0. It must be less than maximum value."
+          error-message="Please inform the company spend ability minimum value. It must be greater than 0. It must be less than the maximum value."
         />
         <AppMoneyInput
           label="Company spend ability maximum value"

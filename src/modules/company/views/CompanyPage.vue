@@ -44,6 +44,14 @@ export default {
 .company-page {
   .companies-table {
     width: 100%;
+
+    thead {
+      text-align: left;
+    }
+
+    tbody tr:nth-of-type(odd) {
+      background-color: rgba(0,0,0,.05);
+    }
   }
 }
 </style>
