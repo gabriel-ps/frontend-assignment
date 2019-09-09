@@ -6,6 +6,7 @@
       <AppInput
         label="Company name"
         placeholder="e.g. Your Company Name"
+        name="name"
         v-model="$v.company.name.$model"
         :has-error="$v.company.name.$dirty ? $v.company.name.$error : false"
         error-message="Please inform the company name."
@@ -14,6 +15,7 @@
       <AppMoneyInput
         label="Company spend"
         placeholder="e.g. $150,000"
+        name="spend"
         v-model="$v.company.spend.$model"
         :has-error="$v.company.spend.$dirty ? $v.company.spend.$error : false"
         error-message="Please inform the company spend value. It must be greater than 0."
@@ -23,6 +25,7 @@
         <AppMoneyInput
           label="Company spend ability minimum value"
           placeholder="e.g. $150,000"
+          name="spend_min"
           v-model="$v.company.spendAbility.minimum.$model"
           :has-error="$v.company.spendAbility.minimum.$dirty ? $v.company.spendAbility.minimum.$error : false"
           error-message="Please inform the company spend ability minimum value. It must be greater than 0. It must be less than the maximum value."
@@ -30,6 +33,7 @@
         <AppMoneyInput
           label="Company spend ability maximum value"
           placeholder="e.g. $330,000"
+          name="spend_max"
           v-model="$v.company.spendAbility.maximum.$model"
           :has-error="$v.company.spendAbility.maximum.$dirty ? $v.company.spendAbility.maximum.$error : false"
           error-message="Please inform the company spend ability maximum value. It must be greater than the minimum value."
@@ -39,6 +43,7 @@
       <AppTextarea
         label="Notes"
         placeholder="e.g. Good Tech Company"
+        name="notes"
         v-model="company.notes"
         @focus="showAdditionalNotesModal()"
       />
@@ -56,6 +61,7 @@
           <template #body>
             <AppTextarea
               placeholder="e.g. Good Tech Company"
+              name="modal_notes"
               v-model="company.notes"
               ref="additionalNotesInput"
             />
