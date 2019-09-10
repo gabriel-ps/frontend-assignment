@@ -10,7 +10,7 @@ localVue.use(Vuex);
 localVue.use(Vuelidate);
 localVue.use(money);
 
-import CompanyData from '@/modules/company/views/CompanyData.vue';
+import CompanyData from './CompanyData.vue';
 
 describe ('CompanyData', () => {
   let wrapper;
@@ -39,6 +39,10 @@ describe ('CompanyData', () => {
       localVue,
       router,
     });
+  });
+
+  test('is a Vue instance', () => {
+    expect(wrapper.isVueInstance()).toBeTruthy();
   });
 
   it ('renders correctly', () => {
