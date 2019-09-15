@@ -18,7 +18,9 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  to.matched.some(record => document.title = record.meta.title);
+  if (to.matched.length) {
+    document.title = to.matched[0].meta.title;
+  }
   next();
 });
 
