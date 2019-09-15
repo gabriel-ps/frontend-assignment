@@ -1,14 +1,9 @@
-import Home from './views/Home.vue';
 import NotFound from './views/NotFound.vue';
 
 export default [
   {
     path: '/',
-    component: Home,
-    name: 'home',
-    meta: {
-      title: 'Home'
-    }
+    redirect: { name: 'company-page' }
   },
   {
     path: '*',
